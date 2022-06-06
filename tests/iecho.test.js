@@ -18,10 +18,10 @@ describe('iecho.test.js', () => {
 
   it('should return the same text reversed and palindrome is false', (done) => {
     request(app)
-      .get('/iecho?text=hola')
+      .get('/iecho?text=hola mundo')
       .expect(200)
       .end((err, res) => {
-        expect(res.body.text).to.equal('aloh');
+        expect(res.body.text).to.equal('odnum aloh');
         expect(res.body.palindrome).to.equal(false);
         done();
       });

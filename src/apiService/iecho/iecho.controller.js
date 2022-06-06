@@ -3,11 +3,12 @@ function invertir(text){
 }
 
 function palindromo(text){
-  return text.split("").reverse().join("") === text;
+  const palindromo = text.split("").reverse().join("").replace(/\s/g, "") === text.replace(/\s/g, "");
+  return palindromo
 }
 
 async function test(req, res) {
-  const onlyTextRegex = /^[a-zA-Z]+$/;
+  const onlyTextRegex = /^[a-zA-Z\s]+$/;
 
   const {
     query: {

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/bin/www",
     "test": "mocha tests/*.js"
   },
   "keywords": [],
