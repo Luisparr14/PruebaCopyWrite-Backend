@@ -1,12 +1,16 @@
 const express = require('express')
 const indexRouter = require('./routes')
+const cors = require('cors')
 const app = express()
+const corsOptins = {
+  origin: '*'
+}
 
-app.set('port', 8080)
+app.set('port', 3001)
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/', indexRouter)
+app.use('/', cors(corsOptins), indexRouter)
 
 module.exports = app
